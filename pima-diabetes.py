@@ -38,12 +38,17 @@ The program uses the Support Vector Classificator to classify data into two sets
 
 def dataset(data):
     data = pd.DataFrame(data)
-
+'''
+Data loading
+'''
 input_file = 'pima-indians-diabetes.csv'
 data = pd.read_csv(input_file)
 
-# Cleaning dataset with kNN-Imputer
-# Replace 0 -> Null
+'''
+The dataset contains multiple (invalid) zero values. We are going to replace zeros with the serial mean.
+Cleaning dataset with kNN-Imputer
+Replace 0 -> Null
+'''
 data[['Glucose','BloodPressure','SkinThickness','Insuline','BMI']] = data[
     ['Glucose','BloodPressure','SkinThickness','Insuline','BMI']
     ].replace(0,np.NaN)
@@ -53,24 +58,32 @@ X, y = data.loc[:,[
     ]], data.loc[:,['Outcome']]
 
 
-# Using k-NN imputer replace NaN -> kNNValue
+'''
+Using k-NN imputer replace NaN -> kNNValue
+'''
 knn = KNNImputer()
 knn.fit(X)
 new_X = knn.transform(X)
 new_X = pd.DataFrame(new_X)
 
 
-# Scaling
+'''
+Scaling
+'''
 new_X = preprocessing.minmax_scale(new_X)
 new_X = pd.DataFrame(new_X)
 
-# PCA transformation - Merge all columns in new_X to 2 colums.
+'''
+PCA transformation - Merge all columns in new_X to 2 colums.
+'''
 X_pca = PCA(n_components=2).fit_transform(new_X)
 
 y = y.astype(int).values
 y = y.ravel()
 
-# Train and test split
+'''
+Division into test and training data
+'''
 num_training = int(0.8 * len(X))
 num_test = len(X) - num_training
 
@@ -100,7 +113,7 @@ Z = Z.reshape(xx.shape)
 y_test_pred = svc.predict(X_test)
 
 # Drawing the plot
-plt.contourf(xx, yy, Z, alpha=0.6)
+plt.contourf(xx, yy, Z, alpha=0.6) #rysuje odpowiednio linie konturowe i wypełnione kontury
 scatter = plt.scatter(X_test[:, 0], X_test[:, 1], c = y_test, marker='x')
 plt.xlim(X_pca[:, 0].min() - 0.1, X_pca[:, 0].max() + 0.1)
 plt.ylim(X_pca[:, 1].min() - 0.1, X_pca[:, 1].max() + 0.1)
