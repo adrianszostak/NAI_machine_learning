@@ -22,4 +22,26 @@ Tutaj niestety, również, chiciaż szansa jest już większa.
 
 Tu natomiast widać szczęsliwe małżenstwo
 
+Pora na Indian:
 
+1.
+
+<img width="225" alt="Zrzut ekranu 2021-12-4 o 10 50 58" src="https://user-images.githubusercontent.com/47918301/144705161-e80a75ff-fbd3-4522-90ca-bb047ebcf798.png">
+<img width="376" alt="Zrzut ekranu 2021-12-4 o 10 51 21" src="https://user-images.githubusercontent.com/47918301/144705174-c575d0ae-82a6-44f1-a0b8-bf6d15ed096f.png">
+
+Zdrowy
+
+2.
+
+<img width="231" alt="Zrzut ekranu 2021-12-4 o 10 52 36" src="https://user-images.githubusercontent.com/47918301/144705203-f6c73946-c59a-40a3-9dae-0ec4048ffb1e.png">
+<img width="370" alt="Zrzut ekranu 2021-12-4 o 10 52 57" src="https://user-images.githubusercontent.com/47918301/144705213-e01e77c5-38ac-45db-afb9-686427150961.png">
+
+Zdrowy
+
+3.
+
+<img width="225" alt="Zrzut ekranu 2021-12-4 o 10 54 11" src="https://user-images.githubusercontent.com/47918301/144705248-3aed72f2-c443-4d26-af19-28e9649c8eba.png">
+
+<img width="371" alt="Zrzut ekranu 2021-12-4 o 10 54 22" src="https://user-images.githubusercontent.com/47918301/144705255-5a5eb88c-0e7e-4b50-9ce6-5764155f89e9.png">
+
+Chory
