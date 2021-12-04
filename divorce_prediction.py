@@ -14,8 +14,18 @@ Adrian Szostak s19777
 
 Input:
 divorces.csv zawierający zbiór danych dotyczących 150 par z odpowiadającymi im zmiennymi skali predyktorów rozwodu (DPS) na podstawie terapii par Gottmana.
+
 Pary pochodzą z różnych regionów Turcji, w których dane zostały pozyskane z rozmów twarzą w twarz z parami, które były już rozwiedzione lub prowadziły szczęśliwe małżeństwo.
 Wszystkie odpowiedzi zebrano w 5-stopniowej skali (0=Nigdy, 1=Rzadko, 2=Średnio, 3=Często, 4=Zawsze).
+Pytań jest 54 i znajdują się w pliku marriage-questions.txt
+
+Dane pochodzą ze strony: https://www.kaggle.com/andrewmvd/divorce-prediction?select=divorce_data.csv
+
+Output:
+0 - przewidywany rozwód
+1 - przewidywane małżeństwo
+
+
 """
 
 def dataset(data):
