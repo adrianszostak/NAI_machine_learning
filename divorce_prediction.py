@@ -30,28 +30,38 @@ Output:
 
 def dataset(data):
     data = pd.DataFrame(data)
-
+'''
+Data loading
+'''
 input_file = 'divorces.csv'
 data = pd.read_csv(input_file)
 
-# Cleaning dataset with kNN-Imputer
+'''
+Do not remove 0, because 0 is also our data!
+'''
 
 X, y = data.loc[:,[
     'Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8','Q9','Q10','Q11','Q12','Q13','Q14','Q15','Q16','Q17','Q18','Q19','Q20','Q21','Q22','Q23','Q24','Q25','Q26','Q27','Q28','Q29','Q30','Q31','Q32','Q33','Q34','Q35','Q36','Q37','Q38','Q39','Q40','Q41','Q42','Q43','Q44','Q45','Q46','Q47','Q48','Q49','Q50','Q51','Q52','Q53','Q54'
     ]], data.loc[:,['Divorce']]
 
 
-# Scaling
+'''
+Scaling
+'''
 X = preprocessing.minmax_scale(X)
 X = pd.DataFrame(X)
 
-# PCA transformation - Merge all columns in new_X to 2 columns.
+'''
+PCA transformation - Merge all columns in new_X to 2 colums.
+'''
 X_pca = PCA(n_components=2).fit_transform(X)
 
 y = y.astype(int).values
 y = y.ravel()
 
-# Train and test split
+'''
+Division into test and training data
+'''
 num_training = int(0.7 * len(X))
 num_test = len(X) - num_training
 
@@ -80,13 +90,13 @@ Z = Z.reshape(xx.shape)
 y_test_pred = svc.predict(X_test)
 
 # Drawing the plot
-plt.contourf(xx, yy, Z, alpha=0.2)
+plt.contourf(xx, yy, Z, alpha=0.2) #rysuje odpowiednio linie konturowe i wypełnione kontury
 scatter = plt.scatter(X_pca[:, 0], X_pca[:, 1], c = y, marker='x')
 plt.xlim(X_pca[:, 0].min() - 0.1, X_pca[:, 0].max() + 0.1)
 plt.ylim(X_pca[:, 1].min() - 0.1, X_pca[:, 1].max() + 0.1)
 plt.figure()
 
-plt.contourf(xx, yy, Z, alpha=0.2)
+plt.contourf(xx, yy, Z, alpha=0.2) #rysuje odpowiednio linie konturowe i wypełnione kontury
 scatter = plt.scatter(X_test[:, 0], X_test[:, 1], c = y_test, marker='x')
 plt.xlim(X_pca[:, 0].min() - 0.1, X_pca[:, 0].max() + 0.1)
 plt.ylim(X_pca[:, 1].min() - 0.1, X_pca[:, 1].max() + 0.1)
