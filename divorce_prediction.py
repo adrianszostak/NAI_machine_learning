@@ -52,7 +52,7 @@ y = y.astype(int).values
 y = y.ravel()
 
 # Train and test split
-num_training = int(0.6 * len(X))
+num_training = int(0.7 * len(X))
 num_test = len(X) - num_training
 
 # Training data
